@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_dialog"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/pink">
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/rl_dialog"
+        app:layout_constraintEnd_toEndOf="@+id/rl_dialog"
+        app:layout_constraintStart_toStartOf="@+id/rl_dialog"
+        app:layout_constraintTop_toTopOf="@+id/rl_dialog"
+        app:srcCompat="@drawable/login_scs"
+        />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Successfully"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:fontFamily="@font/btnfont"
+        app:layout_constraintEnd_toEndOf="@+id/rl_dialog"
+        app:layout_constraintStart_toStartOf="@+id/rl_dialog"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="Done"
+        android:textSize="25sp"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="25dp"
+        android:background="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="@+id/rl_dialog"
+        app:layout_constraintEnd_toEndOf="@+id/rl_dialog"
+        app:layout_constraintStart_toStartOf="@+id/rl_dialog"
+        app:layout_constraintTop_toBottomOf="@+id/rl_dialog" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

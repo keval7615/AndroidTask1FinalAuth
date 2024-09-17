@@ -2,13 +2,16 @@ package com.example.androidtask1finalauth
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidtask1finalauth.databinding.ActivityMainBinding
+import com.example.androidtask1finalauth.databinding.CustomDialogLoginSuccessBinding
 import com.example.androidtask1finalauth.utils.Validationutil
 
 class MainActivity : AppCompatActivity() {
@@ -27,9 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
 //by defaultly button desable
         binding.btnLogin.isEnabled = false
-        binding.btnLogin.setBackgroundResource(R.drawable.bg_default_et_bg)
+        binding.btnLogin.setBackgroundResource(R.drawable.btn_bg)
 
 
 
@@ -60,6 +64,19 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        binding.btnLogin.setOnClickListener {
+            var customDialog = CustomDialogLoginSuccessBinding.inflate(layoutInflater)
+            val customBuilder = AlertDialog.Builder(this).setView(customDialog.root)
+            val dialog = customBuilder.create()
+            dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.show()
+
+            customDialog.button.setOnClickListener {
+                Toast.makeText(applicationContext, "Done Clicked", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+            }
+        }
 
 
 
@@ -118,9 +135,10 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             binding.btnLogin.isEnabled = false
-            binding.btnLogin.setBackgroundResource(R.drawable.bg_default_et_bg)
+            binding.btnLogin.setBackgroundResource(R.drawable.btn_bg)
         }
     }
+
 
 
     }
